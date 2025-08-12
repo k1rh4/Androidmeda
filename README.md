@@ -6,6 +6,13 @@ Android apps generally use Proguard for obfuscating the app and reversing app ca
 
 Androidmeda supports both cloud-based LLM APIs (like OpenAI, Gemini, Anthropic) and local LLM inference via Ollama, offering flexibility and control over your analysis environment.
 
+Apparently Androidmeda can be used to deobfuscate android malware as well. Some great articles covering it.
+
+1) [Deobfuscating Android malware](https://github.com/In3tinct/Deobfuscate-android-app.git)
+
+2) [Benchmarking of Android deobfuscation with Multiple LLM](https://fuzzinglabs.com/llm-assisted-android-deobfuscation-benchmark/)
+
+
 ## Citation
 Please cite, If you use this software in your Research papers, articles etc.
 
