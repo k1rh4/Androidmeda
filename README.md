@@ -10,13 +10,22 @@ Androidmeda supports both cloud-based LLM APIs (like OpenAI, Gemini, Anthropic) 
 Please cite, If you use this software in your Research papers, articles etc.
 
 ```
-@software{Agrawal_Deobfuscate-android-app_Android_app_2024,
+@software{Agrawal_Androidmeda-Deobfuscate-android-app_Android_app_2024,
 author = {Agrawal, Vaibhav},
 month = nov,
-title = {{Deobfuscate-android-app: Android app Vulnerability Scanner and Deobfuscator using LLM}},
+title = {{Androidmeda-Deobfuscate-android-app: Android app Vulnerability Scanner and Deobfuscator using LLM}},
 url = {https://github.com/In3tinct/deobfuscate-android-app},
 version = {1.0.0},
 year = {2024}
+}
+
+@software{Androidmeda-Deobfuscate-android-app_2024,
+  author = {Agrawal, Vaibhav},
+  month = nov,
+  title = {{Androidmeda-Deobfuscate-android-app: Android app Vulnerability Scanner and Deobfuscator using LLM}},
+  url = {https://github.com/In3tinct/deobfuscate-android-app},
+  version = {1.0.0},
+  year = {2024}
 }
 ```
 
