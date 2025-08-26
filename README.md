@@ -74,8 +74,6 @@ Gemini - `python3 androidmeda.py --llm_provider google --llm_model gemini-1.5-fl
 
 ChatGPT - `python3 androidmeda.py --llm_provider openai --llm_model gpt-4.1 -output_dir /tmp/ver/ -source_dir "input_dir1/ input_dir2/"`
 
-**OR**
-
 **b. Using Ollama open source models to run locally.**
 
 Follow steps here to download and run the model locally [github.com/ollama/ollama](https://github.com/ollama/ollama) 
