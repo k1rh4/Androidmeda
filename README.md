@@ -4,7 +4,7 @@ Androidmeda is an LLM tool designed to deobfuscate Android application code and 
 
 Android apps generally use Proguard for obfuscating the app and reversing app can be hard with meaning less variable and function names. LLMs seems to do a good job in understanding the context of the code and renaming variables, functions, adding comments etc. (to certain extent but embrace the unpredictibility of it too).
 
-Androidmeda supports both cloud-based LLM APIs (like OpenAI, Gemini, Anthropic) and local LLM inference via Ollama, offering flexibility and control over your analysis environment.
+Androidmeda supports both LLM APIs (like OpenAI, Gemini, Anthropic) and local LLM inference via Ollama, offering flexibility and control over your analysis environment.
 
 Apparently Androidmeda can be used to deobfuscate android malware as well. Some great articles covering it.
 
