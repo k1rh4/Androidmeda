@@ -69,8 +69,8 @@ async def send_code_to_llm(system_instructions, files_data, llm_client=None):
             retry_delay *= 2  # Exponential backoff
         except Exception as e:
             print(f"LLM API Error: {e}")
-            traceback.print_exc()
-            sys.exit()
+            #traceback.print_exc()
+            #sys.exit()
 
 output_data_lock = threading.Lock()
 output_data = defaultdict(list)
@@ -100,6 +100,7 @@ def process_response_code(response_text,file_path,output_dir):
 
 def create_unobfuscated_code_files(code_output_directory, file_path, java_code):
     
+    file_path=file_path.lstrip('./')
     # Extract directory path from file path
     directory = os.path.join(code_output_directory,os.path.dirname(file_path))
     # Create directories recursively, if they don't exist
@@ -108,6 +109,7 @@ def create_unobfuscated_code_files(code_output_directory, file_path, java_code):
 
     # Create the file
     full_file_path = os.path.join(code_output_directory, file_path)
+    print(f"[+] save file {full_file_path}")
     with open(full_file_path, 'a+',encoding="utf-8") as output_file:
         output_file.write(java_code)
 
@@ -163,6 +165,7 @@ def write_vuln_output(output_vuln_dir):
     for file_name, vulnerabilities in output_data.items():
         output_json[file_name] = vulnerabilities
     
+    print(f"[+] save file {output_vuln_dir}/{output_file}")
     with open(output_vuln_dir, "w+", encoding="utf-8") as output_file:
         json.dump(output_json, output_file, indent=4)
     
@@ -199,13 +202,13 @@ async def main(argv: Sequence[str]) -> None:
         genai.configure(api_key=api_key)
         llm_client = genai.GenerativeModel(_LLM_MODEL.value)
     elif "openai" in _LLM_PROVIDER.value:
-        llm_client = openai.OpenAI(api_key=api_key)
+        llm_client = openai.OpenAI(api_key=api_key, timeout=60.0)
     elif "anthropic" in _LLM_PROVIDER.value:
         llm_client = anthropic.Anthropic(api_key=api_key)
     elif "ollama" in _LLM_PROVIDER.value:
         llm_client = None #We don't need to do anything
     elif "vllm" in _LLM_PROVIDER.value:
-        llm_client = openai.OpenAI(api_key=api_key, base_url=api_base_url)
+        llm_client = openai.OpenAI(api_key=api_key, base_url=api_base_url, timeout=60.0)
     else:
         raise ValueError(f"Unsupported LLM provider: {_LLM_PROVIDER.value}")
 
