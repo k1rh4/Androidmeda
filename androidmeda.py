@@ -157,7 +157,7 @@ async def process_code_files(semaphore, file_path, llm_client):
                 process_response_code(response, file_path, _OUTPUT_DIR.value)
         except Exception as e:
             print(f"Error processing file {file_path}: {e}")
-            traceback.print_exc()
+            #traceback.print_exc()
 
 def write_vuln_output(output_vuln_dir):
     output_json = {}
